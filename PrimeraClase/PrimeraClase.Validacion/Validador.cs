@@ -74,5 +74,20 @@ namespace PrimeraClase.Validacion
                     break;
             }
         }
+
+        private static void ej1() {
+            int registro = 708;
+            for (int i = 1; i <= registro; i++)
+            {
+                if (i % 3 == 0)
+                    Console.WriteLine(i + " - Foo");
+                else if (i % 5 == 0)
+                    Console.WriteLine(i + " - Bar");
+                else if (i % 3 == 0 && i % 5 == 0)
+                    Console.WriteLine(i + " - FooBar");
+                else
+                    Console.WriteLine(i);
+            }
+        }
     }
 }

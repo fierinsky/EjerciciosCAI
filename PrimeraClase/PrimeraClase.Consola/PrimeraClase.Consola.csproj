@@ -50,9 +50,9 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\PrimeraClase.Validacion\PrimeraClase.Validacion.csproj">
+    <ProjectReference Include="..\PrimeraClase.Validacion\PrimeraClase.Ejercicios.csproj">
       <Project>{7da7d9c8-c836-46dc-aa1b-e6fe3e864250}</Project>
-      <Name>PrimeraClase.Validacion</Name>
+      <Name>PrimeraClase.Ejercicios</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
