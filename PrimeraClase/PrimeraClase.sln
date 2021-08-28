@@ -5,7 +5,7 @@ VisualStudioVersion = 14.0.24720.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PrimeraClase.Consola", "PrimeraClase.Consola\PrimeraClase.Consola.csproj", "{3CDCADFB-ED17-475A-9371-06B237B4FCF5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PrimeraClase.Ejercicios", "PrimeraClase.Validacion\PrimeraClase.Ejercicios.csproj", "{7DA7D9C8-C836-46DC-AA1B-E6FE3E864250}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PrimeraClase.Validacion", "PrimeraClase.Validacion\PrimeraClase.Validacion.csproj", "{7DA7D9C8-C836-46DC-AA1B-E6FE3E864250}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
