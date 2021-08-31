@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.24720.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Almacen", "Almacen\Almacen.csproj", "{115A6ADD-5FE3-43BA-A6B2-A62904D91EE4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Almacen.Clases", "Almacen.Clases\Almacen.Clases.csproj", "{62F53187-8B58-4AD6-B4C2-FE86D1626657}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{115A6ADD-5FE3-43BA-A6B2-A62904D91EE4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{115A6ADD-5FE3-43BA-A6B2-A62904D91EE4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{115A6ADD-5FE3-43BA-A6B2-A62904D91EE4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{115A6ADD-5FE3-43BA-A6B2-A62904D91EE4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{62F53187-8B58-4AD6-B4C2-FE86D1626657}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{62F53187-8B58-4AD6-B4C2-FE86D1626657}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{62F53187-8B58-4AD6-B4C2-FE86D1626657}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{62F53187-8B58-4AD6-B4C2-FE86D1626657}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
