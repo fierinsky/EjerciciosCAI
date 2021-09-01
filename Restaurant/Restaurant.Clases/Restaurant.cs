@@ -114,62 +114,6 @@ namespace Restaurant.Clases
         }
     }
 
-    public class Mesa
-    {
-        private int _numero;
-        private int _comensales;
-        private string _material;
-        private string _estado;
-
-        public int Numero
-        {
-            get
-            {
-                return _numero;
-            }
-            set
-            {
-                _numero = value;
-            }
-        }
-
-        public int Comensales
-        {
-            get
-            {
-                return _comensales;
-            }
-            set
-            {
-                _comensales = value;
-            }
-        }
-
-        public string Material
-        {
-            get
-            {
-                return _material;
-            }
-            set
-            {
-                _material = value;
-            }
-        }
-
-        public string Estado
-        {
-            get
-            {
-                return _estado;
-            }
-            set
-            {
-                _estado = value;
-            }
-        }
-    }
-
     public class Silla
     {
         private int _numero;
@@ -265,6 +209,62 @@ namespace Restaurant.Clases
             set
             {
                 _descripcion = value;
+            }
+        }
+    }
+
+    public class Mesa
+    {
+        private int _numero;
+        private int _comensales;
+        private string _material;
+        private string _estado;
+
+        public int Numero
+        {
+            get
+            {
+                return _numero;
+            }
+            set
+            {
+                _numero = value;
+            }
+        }
+
+        public int Comensales
+        {
+            get
+            {
+                return _comensales;
+            }
+            set
+            {
+                _comensales = value;
+            }
+        }
+
+        public string Material
+        {
+            get
+            {
+                return _material;
+            }
+            set
+            {
+                _material = value;
+            }
+        }
+
+        public string Estado
+        {
+            get
+            {
+                return _estado;
+            }
+            set
+            {
+                _estado = value;
             }
         }
     }
