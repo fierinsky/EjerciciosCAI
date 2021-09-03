@@ -11,7 +11,7 @@ namespace SegundaClase.Clases
         private int _idClub;
         private string _nombre;
         private DateTime _fundacion;
-        private Futbolista[] _futbolistas;
+        //private Futbolista[] _futbolistas;
 
         public int IdClub
         {
@@ -49,7 +49,7 @@ namespace SegundaClase.Clases
             }
         }
 
-        public Futbolista[] Futbolistas
+        /*public Futbolista[] Futbolistas
         {
             get
             {
@@ -59,6 +59,6 @@ namespace SegundaClase.Clases
             {
                 _futbolistas = value;
             }
-        }
+        }*/
     }
 }

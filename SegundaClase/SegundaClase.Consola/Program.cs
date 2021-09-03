@@ -18,11 +18,19 @@ namespace SegundaClase.Consola
             messi.Defensa = 65;
             messi.Dribbling = 95;
             messi.Sueldo = 15000000;
+            messi.BuenRendimiento = true;
 
             psg.IdClub = 1;
             psg.Nombre = "PSG";
             psg.Fundacion = new DateTime(1970, 8, 12);
-            psg.Futbolistas[0] = messi;
+
+            Futbolista[] jugadores = new Futbolista[1];
+            jugadores[0] = messi;
+
+            messi.BonoContrato();
+            messi.ConformeEnClub();
+            messi.BonoContrato();
+            messi.ConformeEnClub();
         }
     }
 }

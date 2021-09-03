@@ -15,6 +15,7 @@ namespace SegundaClase.Clases
         private int _ataque;
         private int _fisico;
         private float _sueldo;
+        private bool _buenRendimiento;
 
         //propiedades, getter y setter
         public int NumeroDocumento
@@ -148,5 +149,32 @@ namespace SegundaClase.Clases
                 _sueldo = value;
             }
         }
+
+        public bool BuenRendimiento
+        {
+            get
+            {
+                return _buenRendimiento;
+            }
+            set
+            {
+                _buenRendimiento = value;
+            }
+        }
+
+
+        public void BonoContrato()
+        {
+            if (_buenRendimiento)
+                _sueldo *= 1.2f;
+        }
+
+        public void ConformeEnClub()
+        {
+            if (_sueldo > 20000000)
+                Console.WriteLine("El futbolista " + _nombre + " está conforme en el club.");
+            else Console.WriteLine("El futbolista " + _nombre + "no está conforme en el club");
+        }
+        
     }
 }
