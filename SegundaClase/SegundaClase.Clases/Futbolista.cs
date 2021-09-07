@@ -95,6 +95,15 @@ namespace SegundaClase.Clases
             }
         }
 
+        //CORREGIR
+        public TimeSpan Edad
+        {
+            get
+            {
+                return DateTime.Now - _fechaNacimiento;
+            }
+        }
+
         public int Ritmo
         {
             get

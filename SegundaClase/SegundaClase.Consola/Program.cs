@@ -8,6 +8,7 @@ namespace SegundaClase.Consola
     {
         static void Main(string[] args)
         {
+            //AGREGAR INTERACCION CONSOLA-USUARIO
             Futbolista messi = new Futbolista();
             Club psg = new Club(1, "PSG", new DateTime(1970, 8, 12));
 
