@@ -7,7 +7,7 @@ namespace SegundaClase.Clases
         private int _numeroDocumento;
         private string _nombre;
         private string _apellido;
-        private DateTime _edad;
+        private DateTime _fechaNacimiento;
         private int _ritmo;
         private int _dribbling;
         private int _tiro;
@@ -16,6 +16,26 @@ namespace SegundaClase.Clases
         private int _fisico;
         private float _sueldo;
         private bool _buenRendimiento;
+
+        public Futbolista()
+        {
+            _buenRendimiento = false;
+        }
+
+        public Futbolista(int dni, string nombre, DateTime fechaNacimiento, int ritmo, int dribbling, int tiro, int defensa, int ataque, int fisico, float sueldo, bool rendimiento)
+        {
+            _numeroDocumento = dni;
+            nombre = _nombre + " " + _apellido;
+            _fechaNacimiento = fechaNacimiento;
+            _ritmo = ritmo;
+            _dribbling = dribbling;
+            _tiro = tiro;
+            _defensa = defensa;
+            _ataque = ataque;
+            _fisico = fisico;
+            _sueldo = sueldo;
+            _buenRendimiento = rendimiento;
+        }
 
         //propiedades, getter y setter
         public int NumeroDocumento
@@ -173,7 +193,7 @@ namespace SegundaClase.Clases
         {
             if (_sueldo > 20000000)
                 Console.WriteLine("El futbolista " + _nombre + " está conforme en el club.");
-            else Console.WriteLine("El futbolista " + _nombre + "no está conforme en el club");
+            else Console.WriteLine("El futbolista " + _nombre + " no está conforme en el club");
         }
         
     }

@@ -1,8 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace SegundaClase.Clases
 {
@@ -11,7 +8,18 @@ namespace SegundaClase.Clases
         private int _idClub;
         private string _nombre;
         private DateTime _fundacion;
-        //private Futbolista[] _futbolistas;
+
+        public Club(int id, string nombre, DateTime fundacion)
+        {
+            _idClub = id;
+            _nombre = nombre;
+            _fundacion = fundacion;
+        }
+
+        public Club()
+        {
+
+        }
 
         public int IdClub
         {
@@ -49,16 +57,9 @@ namespace SegundaClase.Clases
             }
         }
 
-        /*public Futbolista[] Futbolistas
+        public void MostrarJugadores(List<Futbolista> jugadores)
         {
-            get
-            {
-                return _futbolistas;
-            }
-            set
-            {
-                _futbolistas = value;
-            }
-        }*/
+            Console.WriteLine("Los jugadores de " + _nombre + " son: " + jugadores.ToString());
+        }
     }
 }

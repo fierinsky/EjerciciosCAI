@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using SegundaClase.Clases;
 
 namespace SegundaClase.Consola
@@ -23,14 +24,19 @@ namespace SegundaClase.Consola
             psg.IdClub = 1;
             psg.Nombre = "PSG";
             psg.Fundacion = new DateTime(1970, 8, 12);
+            
+            List<Futbolista> jugadores = new List<Futbolista>();
+            jugadores.Add(messi);
 
-            Futbolista[] jugadores = new Futbolista[1];
-            jugadores[0] = messi;
+            psg.MostrarJugadores(jugadores);
 
             messi.BonoContrato();
             messi.ConformeEnClub();
             messi.BonoContrato();
             messi.ConformeEnClub();
+
+            Console.Write("Presiona enter para salir.");
+            Console.ReadKey();
         }
     }
 }
