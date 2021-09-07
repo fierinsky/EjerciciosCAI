@@ -74,15 +74,24 @@ namespace SegundaClase.Clases
             }
         }
 
-        public DateTime Edad
+
+        public string NombreCompleto
         {
             get
             {
-                return _edad;
+                return _nombre + " " + _apellido;
+            }
+        }
+
+        public DateTime FechaNacimiento
+        {
+            get
+            {
+                return _fechaNacimiento;
             }
             set
             {
-                _edad = value;
+                _fechaNacimiento = value;
             }
         }
 
@@ -185,8 +194,11 @@ namespace SegundaClase.Clases
 
         public void BonoContrato()
         {
-            if (_buenRendimiento)
+            if (_buenRendimiento) 
+            {
                 _sueldo *= 1.2f;
+                Console.WriteLine(NombreCompleto + " ha recibido un bonus en su contrato por su buen rendimiento");
+            }
         }
 
         public void ConformeEnClub()
@@ -195,6 +207,5 @@ namespace SegundaClase.Clases
                 Console.WriteLine("El futbolista " + _nombre + " está conforme en el club.");
             else Console.WriteLine("El futbolista " + _nombre + " no está conforme en el club");
         }
-        
     }
 }

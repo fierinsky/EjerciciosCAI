@@ -9,7 +9,7 @@ namespace SegundaClase.Consola
         static void Main(string[] args)
         {
             Futbolista messi = new Futbolista();
-            Club psg = new Club();
+            Club psg = new Club(1, "PSG", new DateTime(1970, 8, 12));
 
             messi.NumeroDocumento = 32964420;
             messi.Apellido = "Messi";
@@ -20,15 +20,9 @@ namespace SegundaClase.Consola
             messi.Dribbling = 95;
             messi.Sueldo = 15000000;
             messi.BuenRendimiento = true;
-
-            psg.IdClub = 1;
-            psg.Nombre = "PSG";
-            psg.Fundacion = new DateTime(1970, 8, 12);
             
-            List<Futbolista> jugadores = new List<Futbolista>();
-            jugadores.Add(messi);
-
-            psg.MostrarJugadores(jugadores);
+            psg.FicharJugador(messi);
+            psg.MostrarJugadores();
 
             messi.BonoContrato();
             messi.ConformeEnClub();
