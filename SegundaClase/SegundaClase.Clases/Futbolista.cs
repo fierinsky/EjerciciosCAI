@@ -36,8 +36,7 @@ namespace SegundaClase.Clases
             _sueldo = sueldo;
             _buenRendimiento = rendimiento;
         }
-
-        //propiedades, getter y setter
+        
         public int NumeroDocumento
         {
             get
@@ -213,8 +212,8 @@ namespace SegundaClase.Clases
         public void ConformeEnClub()
         {
             if (_sueldo > 20000000)
-                Console.WriteLine("El futbolista " + _nombre + " está conforme en el club.");
-            else Console.WriteLine("El futbolista " + _nombre + " no está conforme en el club");
+                Console.WriteLine("El futbolista " + NombreCompleto + " está conforme en el club.");
+            else Console.WriteLine("El futbolista " + NombreCompleto + " no está conforme en el club");
         }
     }
 }

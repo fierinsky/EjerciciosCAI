@@ -8,7 +8,7 @@ namespace SegundaClase.Consola
     {
         static void Main(string[] args)
         {
-            //AGREGAR INTERACCION CONSOLA-USUARIO
+            //AGREGAR INTERACCION CONSOLA-USUARIO, PASAR INTERACCION DE CONSOLA DE LAS CLASES AL PROGRAM
             Futbolista messi = new Futbolista();
             Club psg = new Club(1, "PSG", new DateTime(1970, 8, 12));
 

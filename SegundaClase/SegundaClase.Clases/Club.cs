@@ -9,14 +9,13 @@ namespace SegundaClase.Clases
         private string _nombre;
         private DateTime _fundacion;
         private List<Futbolista> _futbolistas;
-        //private Futbolista _jugador;
 
-        public Club(int id, string nombre, DateTime fundacion)
+        public Club(int id, string nombre, DateTime fundacion, List<Futbolista> jugadores = null)
         {
             _idClub = id;
             _nombre = nombre;
             _fundacion = fundacion;
-            _futbolistas = new List<Futbolista>();
+            _futbolistas = jugadores;
         }
 
         public Club()
@@ -41,10 +40,6 @@ namespace SegundaClase.Clases
             get
             {
                 return _nombre;
-            }
-            set
-            {
-                _nombre = value;
             }
         }
 
