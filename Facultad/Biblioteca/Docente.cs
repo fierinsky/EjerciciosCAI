@@ -8,11 +8,6 @@ namespace Biblioteca
 {
     class Docente : Empleado
     {
-        public Docente()
-        {
-
-        }
-
         public override string GetNombreCompleto()
         {
             return "Docente " + _nombre;

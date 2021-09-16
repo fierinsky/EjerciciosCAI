@@ -8,6 +8,8 @@ namespace Biblioteca
 {
     public class Facultad
     {
+        //AGREGAR VALIDACIONES
+
         List<Alumno> _alumnos;
         private int _cantSedes;
         List<Empleado> _empleados;
@@ -18,24 +20,33 @@ namespace Biblioteca
 
         private void AgregarAlumno(Alumno alumno)
         {
-
+            _alumnos.Add(alumno);
         }
 
         private void AgregarEmpleado (Empleado empleado)
         {
-
+            _empleados.Add(empleado);
         }
 
         private void EliminarAlumno(Alumno alumno)
         {
-
+            foreach (Alumno a in _alumnos)
+            {
+                if (a == alumno)
+                    _alumnos.Remove(alumno);
+            }
         }
 
         private void EliminarEmpleado(Empleado empleado)
         {
-
+            foreach (Empleado e in _empleados)
+            {
+                if (e == empleado)
+                    _empleados.Remove(empleado);
+            }
         }
 
+        //HACER
         private void ModificarEmpleado(Empleado empleado)
         {
 
@@ -46,7 +57,7 @@ namespace Biblioteca
             return _alumnos;
         }
 
-        //revisar
+        //REVISAR
         private Empleado TraerEmpleadoPorLegajo(int legajo)
         {
             Empleado a = new Empleado();

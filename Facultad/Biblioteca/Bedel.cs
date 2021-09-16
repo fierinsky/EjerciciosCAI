@@ -12,11 +12,6 @@ namespace Biblioteca
 
         public string Apodo { get => _apodo; }
 
-        public Bedel()
-        {
-
-        }
-
         public override string GetNombreCompleto()
         {
             return "Bedel " + _apodo;
