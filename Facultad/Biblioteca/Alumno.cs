@@ -10,23 +10,11 @@ namespace Biblioteca
     {
         private int _codigo;
 
-        public int Codigo
-        {
-            get
-            {
-                return _codigo;
-            }
-        }
+        public int Codigo { get => _codigo; }
 
-        public string Credencial
-        {
-            get
-            {
-                return GetCredencial();
-            }
-        }
+        public string Credencial { get => GetCredencial(); }
 
-        private new string GetCredencial()
+        public override string GetCredencial()
         {
             return $"Código: {_codigo} {_apellido}, {_nombre}";
         }

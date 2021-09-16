@@ -6,11 +6,7 @@ using System.Threading.Tasks;
 
 namespace Facultad.Consola
 {
-    class Program
+    class Helper
     {
-        static void Main(string[] args)
-        {
-
-        }
     }
 }

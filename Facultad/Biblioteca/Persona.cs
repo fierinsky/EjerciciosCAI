@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Biblioteca
 {
-    public class Persona
+    class Persona
     {
         protected string _apellido;
         protected DateTime _fechaNacimiento;
@@ -26,22 +26,21 @@ namespace Biblioteca
             {
                 return _nombre;
             }
-        }
-
-        public int Edad
-        {
-            get
+            set
             {
-                return int.Parse(DateTime.Now - _fechaNacimiento);
+                _nombre = value;
             }
         }
 
-        protected string GetCredencial()
+        public int Edad { get => int.Parse(DateTime.Now - _fechaNacimiento); }
+
+
+        public virtual string GetCredencial()
         {
             return "";
         }
 
-        protected string GetNombreCompleto()
+        public virtual string GetNombreCompleto()
         {
             return _nombre + " " + _apellido;
         }
