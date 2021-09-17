@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Biblioteca
 {
-    class Salario
+    public class Salario
     {
         private double _bruto;
         private string _codigoTransferencia;

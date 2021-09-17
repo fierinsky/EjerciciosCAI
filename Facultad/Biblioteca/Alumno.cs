@@ -6,13 +6,18 @@ using System.Threading.Tasks;
 
 namespace Biblioteca
 {
-    internal class Alumno : Persona
+    public class Alumno : Persona
     {
         private int _codigo;
 
         public int Codigo { get => _codigo; }
 
         public string Credencial { get => GetCredencial(); }
+
+        public Alumno(int codigo, string nombre, string apellido, DateTime fecha) : base(nombre, apellido, fecha)
+        {
+            _codigo = codigo;
+        }
 
         public override string GetCredencial()
         {

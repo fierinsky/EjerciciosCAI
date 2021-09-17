@@ -6,29 +6,35 @@ using System.Threading.Tasks;
 
 namespace Biblioteca
 {
-    public class Facultad
+    public class Facu
     {
         //AGREGAR VALIDACIONES
 
-        List<Alumno> _alumnos;
+        private List<Alumno> _alumnos;
         private int _cantSedes;
-        List<Empleado> _empleados;
+        private List<Empleado> _empleados;
         private string _nombre;
 
         public int CantSedes { get => _cantSedes; }
         public string Nombre { get => _nombre; }
 
-        private void AgregarAlumno(Alumno alumno)
+        public Facu(string nombre, int sedes)
+        {
+            _nombre = nombre;
+            _cantSedes = sedes;
+        }
+
+        public void AgregarAlumno(Alumno alumno)
         {
             _alumnos.Add(alumno);
         }
 
-        private void AgregarEmpleado (Empleado empleado)
+        public void AgregarEmpleado (Empleado empleado)
         {
             _empleados.Add(empleado);
         }
 
-        private void EliminarAlumno(Alumno alumno)
+        public void EliminarAlumno(Alumno alumno)
         {
             foreach (Alumno a in _alumnos)
             {
@@ -37,7 +43,7 @@ namespace Biblioteca
             }
         }
 
-        private void EliminarEmpleado(Empleado empleado)
+        public void EliminarEmpleado(Empleado empleado)
         {
             foreach (Empleado e in _empleados)
             {
@@ -47,12 +53,12 @@ namespace Biblioteca
         }
 
         //HACER
-        private void ModificarEmpleado(Empleado empleado)
+        public void ModificarEmpleado(Empleado empleado)
         {
 
         }
 
-        private List<Alumno> TraerAlumnos()
+        public List<Alumno> TraerAlumnos()
         {
             return _alumnos;
         }
@@ -69,7 +75,7 @@ namespace Biblioteca
             return a;
         }
 
-        private List<Empleado> TraerEmpleados()
+        public List<Empleado> TraerEmpleados()
         {
             return _empleados;
         }

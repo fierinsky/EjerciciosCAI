@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Biblioteca
 {
-    abstract internal class Empleado : Persona
+    abstract public class Empleado : Persona
     {
         protected DateTime _fechaIngreso;
         protected int _legajo;

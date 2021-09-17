@@ -6,7 +6,8 @@ using System.Threading.Tasks;
 
 namespace Facultad.Consola
 {
-    class Helper
+    static class Helper
     {
+
     }
 }
