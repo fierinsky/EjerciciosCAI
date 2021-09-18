@@ -41,10 +41,14 @@ namespace Biblioteca
             return GetCredencial();
         }
 
-        //HACER
         public override bool Equals(object obj)
         {
-            return base.Equals(obj);
+            if (obj == null)
+                return false;
+            else if (_legajo == ((Empleado)obj).Legajo)
+                return true;
+            else
+                return false;
         }
     }
 }

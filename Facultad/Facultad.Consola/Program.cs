@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Biblioteca;
+using ConsolaHelper;
 
 namespace Facultad.Consola
 {
@@ -21,11 +22,13 @@ namespace Facultad.Consola
 
         static void Main(string[] args)
         {
-            Console.WriteLine("Bienvenido a " + _facultad.Nombre);
+            Console.WriteLine("Bienvenido a " + _facultad.Nombre + ", elija una opción para continuar: ");
             do
             {
-                DesplegarMenu(); 
+                DesplegarMenu();
+
                 string opcionSeleccionada = Console.ReadLine();
+                Helper.validarString(opcionSeleccionada); 
                 
             if (opcionSeleccionada.ToUpper() == "X")
                 {
@@ -36,39 +39,28 @@ namespace Facultad.Consola
             switch (opcionSeleccionada)
                 {
                     case "1":
-                        // listar
                         ListarAlumnos();
                         break;
                     case "2":
-                        // listar
                         ListarEmpleados();
                         break;
                     case "3":
-                        // alta
                         AgregarAlumno();
                         break;
                     case "4":
-                        // modificar
                         ModificarAlumno();
                         break;
                     case "5":
-                        // borrar
                         EliminarAlumno();
                         break;
                     case "6":
-                        // alta
                         AgregarEmpleado();
                         break;
                     case "7":
-                        // modificar
-                        ModificarAlumno();
+                        ModificarEmpleado();
                         break;
                     case "8":
-                        // borrar
                         EliminarEmpleado();
-                        break;
-                    case "9":
-                        Console.Clear();
                         break;
                     default:
                         Console.WriteLine("Opción inválida.");
@@ -85,25 +77,39 @@ namespace Facultad.Consola
             Console.ReadKey();
         }
         
-        //terminar
         private static void DesplegarMenu()
         {
-            Console.WriteLine("1) Listar Alumnos \n2) Listar Empleados ... Sigan escribiendo ustedes");
+            Console.WriteLine("1) Listar Alumnos \n2) Listar Empleados \n3) Agregar Alumno \n4) Modfificar Alumno \n5) Eliminar Alumno \n6) Agregar Empleado \n7) Modificar Empleado \n8) Eliminar Empleado X) Salir");
         }
 
         private static void ListarAlumnos()
         {
-            _facultad.TraerAlumnos();
+            if (!_facultad.TraerAlumnos().Any())
+                Console.WriteLine("No hay alumnos");
+            else
+            {
+                foreach (Alumno a in _facultad.TraerAlumnos())
+                {
+                    Console.WriteLine(a.GetNombreCompleto());
+                }
+            }
         }
 
         private static void ListarEmpleados()
         {
-            _facultad.TraerEmpleados();
+            if (!_facultad.TraerEmpleados().Any())
+                Console.WriteLine("No hay empleados");
+            else
+            {
+                foreach (Empleado e in _facultad.TraerEmpleados())
+                {
+                    Console.WriteLine(e.GetNombreCompleto());
+                }
+            }
         }
 
         private static void AgregarAlumno()
         {
-            //cambiar lo del codigo
             Console.WriteLine("Ingrese el codigo del alumno nuevo: ");
             int codigo = int.Parse(Console.ReadLine());
 
@@ -120,10 +126,38 @@ namespace Facultad.Consola
             _facultad.AgregarAlumno(alumno);
         }
 
-        //HACER
-        private static void EliminarAlumno()
+        private static void ModificarAlumno()
         {
 
+        }
+
+        private static void EliminarAlumno()
+        {
+            Console.WriteLine("Ingrese el codigo del alumno a eliminar: ");
+            int codigo = int.Parse(Console.ReadLine());
+
+            Alumno aBorrar = _facultad.TraerAlumnoPorCodigo(codigo);
+            _facultad.EliminarAlumno(aBorrar);
+            Console.WriteLine("Alumno elimnado correctamente");
+        }
+
+        private static void AgregarEmpleado()
+        {
+
+        }
+        private static void ModificarEmpleado()
+        {
+            
+        }
+
+        private static void EliminarEmpleado()
+        {
+            Console.WriteLine("Ingrese el codigo del número de legajo del empleado a eliminar: ");
+            int legajo = int.Parse(Console.ReadLine());
+
+            Empleado empBorrar = _facultad.TraerEmpleadoPorLegajo(legajo);
+            _facultad.EliminarEmpleado(empBorrar);
+            Console.WriteLine("Empleado elimnado correctamente");
         }
     }
 }

@@ -10,13 +10,18 @@ namespace Biblioteca
     {
         private int _codigo;
 
-        public int Codigo { get => _codigo; }
+        public int Codigo { get => _codigo; set => _codigo = value; }
 
         public string Credencial { get => GetCredencial(); }
 
         public Alumno(int codigo, string nombre, string apellido, DateTime fecha) : base(nombre, apellido, fecha)
         {
             _codigo = codigo;
+        }
+
+        public Alumno()
+        {
+
         }
 
         public override string GetCredencial()
@@ -27,6 +32,16 @@ namespace Biblioteca
         public override string ToString()
         {
             return GetCredencial();
+        }
+
+        public override bool Equals(object obj)
+        {
+            if (obj == null)
+                return false; 
+            else if (_codigo == ((Alumno)obj).Codigo)
+                return true;
+            else 
+                return false;
         }
     }
 }

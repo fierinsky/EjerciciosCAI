@@ -6,15 +6,11 @@ using System.Threading.Tasks;
 
 namespace Biblioteca
 {
-    class Bedel : Empleado
+    class Directivo : Empleado
     {
-        private string _apodo;
-
-        public string Apodo { get => _apodo; set => _apodo = value; }
-
         public override string GetNombreCompleto()
         {
-            return "Bedel " + _apodo;
+            return "Sr. Director " + _apellido;
         }
     }
 }

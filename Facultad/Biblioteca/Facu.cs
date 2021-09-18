@@ -8,8 +8,6 @@ namespace Biblioteca
 {
     public class Facu
     {
-        //AGREGAR VALIDACIONES
-
         private List<Alumno> _alumnos;
         private int _cantSedes;
         private List<Empleado> _empleados;
@@ -22,6 +20,8 @@ namespace Biblioteca
         {
             _nombre = nombre;
             _cantSedes = sedes;
+            _alumnos = new List<Alumno>();
+            _empleados = new List<Empleado>();
         }
 
         public void AgregarAlumno(Alumno alumno)
@@ -52,7 +52,11 @@ namespace Biblioteca
             }
         }
 
-        //HACER
+        public void ModificarAlumno(Alumno alumno)
+        {
+
+        }
+
         public void ModificarEmpleado(Empleado empleado)
         {
 
@@ -64,7 +68,7 @@ namespace Biblioteca
         }
 
         //REVISAR
-        private Empleado TraerEmpleadoPorLegajo(int legajo)
+        public Empleado TraerEmpleadoPorLegajo(int legajo)
         {
             Empleado a = new Empleado();
             foreach (Empleado e in _empleados)
@@ -80,7 +84,7 @@ namespace Biblioteca
             return _empleados;
         }
 
-        private List<Empleado> TraerEmpleadoPorApellido(string nombre)
+        private List<Empleado> TraerEmpleadoPorNombre(string nombre)
         {
             List<Empleado> lst = new List<Empleado>();
             foreach (Empleado e in _empleados)
@@ -89,6 +93,17 @@ namespace Biblioteca
                     lst.Add(e);
             }
             return lst;
+        }
+
+        public Alumno TraerAlumnoPorCodigo(int codigo)
+        {
+            Alumno alumno = new Alumno();
+            foreach (Alumno a in _alumnos)
+            {
+                if (a.Codigo == codigo)
+                    alumno = a;
+            }
+            return alumno;
         }
     }
 }

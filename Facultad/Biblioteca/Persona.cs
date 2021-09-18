@@ -12,25 +12,9 @@ namespace Biblioteca
         protected DateTime _fechaNacimiento;
         protected string _nombre;
 
-        public string Apellido
-        {
-            get
-            {
-                return _apellido;
-            }
-        }
+        public string Apellido { get => _apellido; set => _apellido = value; }
 
-        public string Nombre
-        {
-            get
-            {
-                return _nombre;
-            }
-            set
-            {
-                _nombre = value;
-            }
-        }
+        public string Nombre { get => _nombre; set => _nombre = value; }
 
         public int Edad { get => int.Parse(DateTime.Now - _fechaNacimiento); }
 
@@ -41,6 +25,10 @@ namespace Biblioteca
             _fechaNacimiento = fecha;
         }
 
+        public Persona()
+        {
+
+        }
 
         public virtual string GetCredencial()
         {

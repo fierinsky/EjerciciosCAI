@@ -6,11 +6,10 @@ using System.Threading.Tasks;
 
 namespace Biblioteca
 {
-    class Director : Empleado
+    public enum TipoEmpleado
     {
-        public override string GetNombreCompleto()
-        {
-            return "Sr. Director " + _apellido;
-        }
+        Bedel,
+        Docente,
+        Directivo
     }
 }
