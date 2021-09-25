@@ -67,7 +67,7 @@ namespace Biblioteca
             return _alumnos;
         }
 
-        //REVISAR
+        /*REVISAR
         public Empleado TraerEmpleadoPorLegajo(int legajo)
         {
             Empleado a = new Empleado();
@@ -77,7 +77,7 @@ namespace Biblioteca
                     a = e;
             }
             return a;
-        }
+        }*/
 
         public List<Empleado> TraerEmpleados()
         {

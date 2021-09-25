@@ -6,14 +6,14 @@ using System.Threading.Tasks;
 
 namespace Biblioteca
 {
-    abstract public class Empleado : Persona
+    public abstract class Empleado : Persona
     {
         protected DateTime _fechaIngreso;
         protected int _legajo;
         protected List<Salario> _salarios;
         protected Salario _ultimoSalario;
 
-        public int Antiguedad { get => int.Parse(DateTime.Now - _fechaIngreso); }
+        //public int Antiguedad { get => int.Parse(DateTime.Now - _fechaIngreso); }
 
         public DateTime FechaIngreso { get => _fechaIngreso; }
 

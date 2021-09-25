@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Biblioteca
 {
-    public class Persona
+    public abstract class Persona
     {
         protected string _apellido;
         protected DateTime _fechaNacimiento;
@@ -16,7 +16,7 @@ namespace Biblioteca
 
         public string Nombre { get => _nombre; set => _nombre = value; }
 
-        public int Edad { get => int.Parse(DateTime.Now - _fechaNacimiento); }
+        //public int Edad { get => int.Parse(DateTime.Now - _fechaNacimiento); }
 
         public Persona(string nombre, string apellido, DateTime fecha)
         {
@@ -30,10 +30,7 @@ namespace Biblioteca
 
         }
 
-        public virtual string GetCredencial()
-        {
-            return "";
-        }
+        public abstract string GetCredencial();
 
         public virtual string GetNombreCompleto()
         {

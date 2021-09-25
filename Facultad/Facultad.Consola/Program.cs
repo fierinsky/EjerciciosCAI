@@ -79,7 +79,7 @@ namespace Facultad.Consola
         
         private static void DesplegarMenu()
         {
-            Console.WriteLine("1) Listar Alumnos \n2) Listar Empleados \n3) Agregar Alumno \n4) Modfificar Alumno \n5) Eliminar Alumno \n6) Agregar Empleado \n7) Modificar Empleado \n8) Eliminar Empleado X) Salir");
+            Console.WriteLine("1) Listar Alumnos \n2) Listar Empleados \n3) Agregar Alumno \n4) Modfificar Alumno \n5) Eliminar Alumno \n6) Agregar Empleado \n7) Modificar Empleado \n8) Eliminar Empleado \nX) Salir");
         }
 
         private static void ListarAlumnos()
@@ -90,7 +90,7 @@ namespace Facultad.Consola
             {
                 foreach (Alumno a in _facultad.TraerAlumnos())
                 {
-                    Console.WriteLine(a.GetNombreCompleto());
+                    Console.WriteLine(a.ToString());
                 }
             }
         }
@@ -103,7 +103,7 @@ namespace Facultad.Consola
             {
                 foreach (Empleado e in _facultad.TraerEmpleados())
                 {
-                    Console.WriteLine(e.GetNombreCompleto());
+                    Console.WriteLine(e.ToString());
                 }
             }
         }
@@ -124,11 +124,19 @@ namespace Facultad.Consola
 
             Alumno alumno = new Alumno(codigo, nombre, apellido, fecha);
             _facultad.AgregarAlumno(alumno);
+
+            Console.WriteLine("Alumno agregado correctamente");
         }
 
         private static void ModificarAlumno()
         {
+            Console.WriteLine("Ingrese el codigo del alumno a modificar: ");
+            int codigo = int.Parse(Console.ReadLine());
 
+            Alumno aModificar = _facultad.TraerAlumnoPorCodigo(codigo);
+            _facultad.EliminarAlumno(aModificar);
+
+            Console.WriteLine("Alumno modificado correctamente");
         }
 
         private static void EliminarAlumno()
@@ -138,7 +146,8 @@ namespace Facultad.Consola
 
             Alumno aBorrar = _facultad.TraerAlumnoPorCodigo(codigo);
             _facultad.EliminarAlumno(aBorrar);
-            Console.WriteLine("Alumno elimnado correctamente");
+
+            Console.WriteLine("Alumno eliminado correctamente");
         }
 
         private static void AgregarEmpleado()
@@ -155,8 +164,8 @@ namespace Facultad.Consola
             Console.WriteLine("Ingrese el codigo del número de legajo del empleado a eliminar: ");
             int legajo = int.Parse(Console.ReadLine());
 
-            Empleado empBorrar = _facultad.TraerEmpleadoPorLegajo(legajo);
-            _facultad.EliminarEmpleado(empBorrar);
+            //Empleado empBorrar = _facultad.TraerEmpleadoPorLegajo(legajo);
+            //_facultad.EliminarEmpleado(empBorrar);
             Console.WriteLine("Empleado elimnado correctamente");
         }
     }
