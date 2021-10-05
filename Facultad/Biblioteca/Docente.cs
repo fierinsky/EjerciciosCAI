@@ -6,8 +6,13 @@ using System.Threading.Tasks;
 
 namespace Biblioteca
 {
-    class Docente : Empleado
+    public class Docente : Empleado
     {
+        public Docente(string nombre, string apellido, int legajo, DateTime fecha, DateTime ingreso) : base(legajo, ingreso, nombre, apellido, fecha)
+        {
+
+        }
+
         public override string GetNombreCompleto()
         {
             return "Docente " + _nombre;

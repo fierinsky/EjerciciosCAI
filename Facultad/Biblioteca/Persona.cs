@@ -25,11 +25,6 @@ namespace Biblioteca
             _fechaNacimiento = fecha;
         }
 
-        public Persona()
-        {
-
-        }
-
         public abstract string GetCredencial();
 
         public virtual string GetNombreCompleto()

@@ -110,16 +110,16 @@ namespace Facultad.Consola
 
         private static void AgregarAlumno()
         {
-            Console.WriteLine("Ingrese el codigo del alumno nuevo: ");
+            Console.WriteLine("Ingrese el codigo del alumno: ");
             int codigo = int.Parse(Console.ReadLine());
 
-            Console.WriteLine("Ingrese el nombre del alumno nuevo: ");
+            Console.WriteLine("Ingrese el nombre del alumno: ");
             string nombre = Console.ReadLine();
 
-            Console.WriteLine("Ingrese el apellido del alumno nuevo: ");
+            Console.WriteLine("Ingrese el apellido del alumno: ");
             string apellido = Console.ReadLine();
 
-            Console.WriteLine("Ingrese la fecha de nacimiento del alumno nuevo: ");
+            Console.WriteLine("Ingrese la fecha de nacimiento del alumno: ");
             DateTime fecha = DateTime.Parse(Console.ReadLine());
 
             Alumno alumno = new Alumno(codigo, nombre, apellido, fecha);
@@ -128,45 +128,118 @@ namespace Facultad.Consola
             Console.WriteLine("Alumno agregado correctamente");
         }
 
+        //AGREGAR EXCEPTION ALUMNO NO ENCONTRADO Y TERMINAR
         private static void ModificarAlumno()
         {
             Console.WriteLine("Ingrese el codigo del alumno a modificar: ");
             int codigo = int.Parse(Console.ReadLine());
 
             Alumno aModificar = _facultad.TraerAlumnoPorCodigo(codigo);
-            _facultad.EliminarAlumno(aModificar);
+            if (aModificar == null)
+                Console.WriteLine("No se encontró el alumno " + codigo);
 
-            Console.WriteLine("Alumno modificado correctamente");
+            else
+            {
+                AgregarAlumno();
+                _facultad.EliminarAlumno(aModificar);
+                Console.WriteLine("Alumno eliminado correctamente");
+            }
         }
 
+        //AGREGAR EXCEPTION ALUMNO NO ENCONTRADO
         private static void EliminarAlumno()
         {
             Console.WriteLine("Ingrese el codigo del alumno a eliminar: ");
             int codigo = int.Parse(Console.ReadLine());
-
             Alumno aBorrar = _facultad.TraerAlumnoPorCodigo(codigo);
-            _facultad.EliminarAlumno(aBorrar);
 
-            Console.WriteLine("Alumno eliminado correctamente");
+            if (aBorrar == null)
+                Console.WriteLine("No se encontró el alumno " + codigo);
+
+            else
+            {
+                _facultad.EliminarAlumno(aBorrar);
+                Console.WriteLine("Alumno eliminado correctamente");
+            }
         }
 
         private static void AgregarEmpleado()
         {
+            Console.WriteLine("Ingrese el nombre del empleado: ");
+            string nombre = Console.ReadLine();
 
+            Console.WriteLine("Ingrese el apellido del empleado: ");
+            string apellido = Console.ReadLine();
+
+            Console.WriteLine("Ingrese la fecha de nacimiento del empleado: ");
+            DateTime fecha = DateTime.Parse(Console.ReadLine());
+
+            Console.WriteLine("Ingrese el número de legajo del empleado: ");
+            int legajo = int.Parse(Console.ReadLine());
+
+            DateTime ingreso = DateTime.Now;
+
+            Console.WriteLine("Ingrese el tipo de empleado: ");
+            int tipo = int.Parse(Console.ReadLine());
+
+            switch (tipo)
+            {
+                case 1:                    
+                    Console.WriteLine("Ingrese el apodo del bedel");
+                    string apodo = Console.ReadLine();
+                    Bedel bedel = new Bedel(apodo, nombre, apellido, legajo, fecha, ingreso);
+                    _facultad.AgregarEmpleado(bedel);
+                    break;
+
+                case 2:
+                    Docente docente = new Docente(nombre, apellido, legajo, fecha, ingreso);
+                    _facultad.AgregarEmpleado(docente);
+                    break;
+
+                case 3:
+                    Directivo directivo = new Directivo(nombre, apellido, legajo, fecha, ingreso);
+                    _facultad.AgregarEmpleado(directivo);
+                    break;
+            }    
+            
+            Console.WriteLine("Empleado agregado correctamente");
         }
+
+        //AGREGAR EXCEPTION EMPLEADO NO ENCONTRADO Y TERMINAR
         private static void ModificarEmpleado()
         {
-            
+            Console.WriteLine("Ingrese el codigo del número de legajo del empleado a modificar: ");
+            int legajo = int.Parse(Console.ReadLine());
+
+            Empleado empModificar = _facultad.TraerEmpleadoPorLegajo(legajo);
+
+            if (empModificar == null)
+                Console.WriteLine("Empleado no encontrado");
+
+            else
+            {
+                
+                _facultad.AgregarEmpleado(empModificar);
+                Console.WriteLine("Empleado elimnado correctamente");
+            }
         }
 
+        //AGREGAR EXCEPTION EMPLEADO NO ENCONTRADO
         private static void EliminarEmpleado()
         {
             Console.WriteLine("Ingrese el codigo del número de legajo del empleado a eliminar: ");
             int legajo = int.Parse(Console.ReadLine());
 
-            //Empleado empBorrar = _facultad.TraerEmpleadoPorLegajo(legajo);
-            //_facultad.EliminarEmpleado(empBorrar);
-            Console.WriteLine("Empleado elimnado correctamente");
+            Empleado empBorrar = _facultad.TraerEmpleadoPorLegajo(legajo);
+
+            if (empBorrar == null)
+                Console.WriteLine("Empleado no encontrado");
+
+            else
+            {
+                _facultad.EliminarEmpleado(empBorrar);
+                Console.WriteLine("Empleado elimnado correctamente");
+            }
         }
     }
 }

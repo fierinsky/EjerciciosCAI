@@ -13,6 +13,12 @@ namespace Biblioteca
         protected List<Salario> _salarios;
         protected Salario _ultimoSalario;
 
+        public Empleado(int legajo, DateTime ingreso, string nombre, string apellido, DateTime fecha) : base(nombre, apellido, fecha)
+        {
+            _legajo = legajo;
+            _fechaIngreso = ingreso;
+        }
+
         //public int Antiguedad { get => int.Parse(DateTime.Now - _fechaIngreso); }
 
         public DateTime FechaIngreso { get => _fechaIngreso; }

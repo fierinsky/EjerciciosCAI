@@ -67,17 +67,13 @@ namespace Biblioteca
             return _alumnos;
         }
 
-        /*REVISAR
+        
         public Empleado TraerEmpleadoPorLegajo(int legajo)
         {
-            Empleado a = new Empleado();
-            foreach (Empleado e in _empleados)
-            {
-                if (e.Legajo == legajo)
-                    a = e;
-            }
-            return a;
-        }*/
+            List<Empleado> empleados = new List<Empleado>();
+            Empleado empleado = empleados.Find(e => e.Legajo == legajo);
+            return empleado;
+        }
 
         public List<Empleado> TraerEmpleados()
         {
@@ -97,12 +93,8 @@ namespace Biblioteca
 
         public Alumno TraerAlumnoPorCodigo(int codigo)
         {
-            Alumno alumno = new Alumno();
-            foreach (Alumno a in _alumnos)
-            {
-                if (a.Codigo == codigo)
-                    alumno = a;
-            }
+            List<Alumno> alumnos = new List<Alumno>();
+            Alumno alumno = alumnos.Find(a => a.Codigo == codigo);
             return alumno;
         }
     }

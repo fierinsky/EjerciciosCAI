@@ -19,11 +19,6 @@ namespace Biblioteca
             _codigo = codigo;
         }
 
-        public Alumno()
-        {
-
-        }
-
         public override string GetCredencial()
         {
             return $"Código: {_codigo} {_apellido}, {_nombre}";

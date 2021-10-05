@@ -6,8 +6,13 @@ using System.Threading.Tasks;
 
 namespace Biblioteca
 {
-    class Directivo : Empleado
+    public class Directivo : Empleado
     {
+        public Directivo(string nombre, string apellido, int legajo, DateTime fecha, DateTime ingreso) : base(legajo, ingreso, nombre, apellido, fecha)
+        {
+
+        }
+
         public override string GetNombreCompleto()
         {
             return "Sr. Director " + _apellido;
